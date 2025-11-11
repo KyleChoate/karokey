@@ -1,0 +1,6 @@
+// wrangler.jsonc
+{
+  "name": "karokey",
+  "pages_build_output_dir": ".", // The directory containing your index.html
+  "compatibility_date": "2025-11-10" // Use the current date
+}
