@@ -1,12 +1,5 @@
 {
-  // Wrangler configuration for Cloudflare Pages + OpenNext
   "name": "karokey-frontend",
-  "type": "javascript",
   "compatibility_date": "2025-11-17",
-  "pages_build_output_dir": ".next", // directory where Next.js build output goes
-  "build": {
-    "command": "npx open-next build", // build command
-    "cwd": ".",                       // root directory for your frontend code
-    "watch_dir": "."                  // optional, for local dev watch
-  }
+  "pages_build_output_dir": ".next"
 }
