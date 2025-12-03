@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KARO - Home</title>
   <style>
-    body {
+    body
+    {
       background-color: #111;
       color: #fff;
       font-family: Arial, sans-serif;
@@ -17,38 +18,42 @@
       margin: 0;
     }
 
-    .logo {
-      width: 300px;
-      height: 300px;
+    .logo 
+    {
+      width: 400px;
+      height: 400px;
       background-color: #1a1a1a;
-      border: 3px solid #8230c9;
-      border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       box-shadow: 0 0 25px rgba(130, 48, 201, 0.6);
-      margin-bottom: 40px;
+      border-radius: 32px;
+      margin-bottom: 80px;
+      border: 12px solid #1d1e53;
     }
 
-    .logo img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 15px;
+    .logo img 
+    {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 19px;
     }
 
-    .start-btn {
+    .start-btn 
+    {
       background-color: #b366ff;
-      color: #fff;
+      color: #fce9ff;
       border: none;
       padding: 12px 25px;
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 32px;
       transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .start-btn:hover {
+    .start-btn:hover 
+    {
       background-color: #9c4aff;
       transform: scale(1.05);
     }
@@ -57,7 +62,7 @@
 </head>
 <body>
   <div class="logo">
-    <img src="karo-logo.png" alt="KARO Logo">
+    <img src="assets/logo/no_border.png" alt="KARO Key Logo">
   </div>
   <button class="start-btn" onclick="window.location.href='upload.html'">Get Started</button>
 </body>
