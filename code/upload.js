@@ -41,6 +41,11 @@ closeBtn.onclick = () => {
 
     if (videoID == "dQw4w9WgXcQ")
         imageElement.src = alternateImage;
+    else
+    {
+        if (imageElement.src == alternateImage)
+            imageElement.src = defaultImage;
+    }
 
     // Show convert song button
     convertBtn.style.display = "block";
