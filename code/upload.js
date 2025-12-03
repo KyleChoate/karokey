@@ -1,9 +1,15 @@
+// Link insert elements
 const popup = document.getElementById("upload_screen");
 const openBtn = document.getElementById("begin_upload_button");
 const closeBtn = document.getElementById("complete_upload_button");
 const videoInput = document.getElementById("video_link_input");
 const videoContainer = document.getElementById("video_container");
 const convertBtn = document.getElementById("convert_song_button");
+
+// Top image display
+const defaultImage = "assets/synthwave.jpg";
+const alternateImage = "assets/lalala.png";
+const imageElement = document.getElementById('topUploadImage');
 
 // Open popup
 openBtn.onclick = () => {
@@ -32,6 +38,9 @@ closeBtn.onclick = () => {
   // Embed video if valid
   if (videoID) {
     videoContainer.innerHTML = `<iframe id="embedded_video" src="https://www.youtube.com/embed/${videoID}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+    if (videoID == "dQw4w9WgXcQ")
+        imageElement.src = alternateImage;
 
     // Show convert song button
     convertBtn.style.display = "block";

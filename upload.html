@@ -54,7 +54,14 @@
       /* Appearance */
       background-color: #242424;
       border-radius: 16px;
-      box-shadow: 0 0 25px rgba(130, 48, 201, 0.6);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .input_box img 
+    {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 19px;
     }
 
     .button
@@ -227,7 +234,9 @@
 
 <body>
   <div class="central_box">
-    <div class="input_box"> Maybe an alternative logo here</div>
+    <div class="input_box">
+      <img src="assets/synthwave.jpg" alt="KARO Key Logo" id="topUploadImage">
+    </div>
 
     <button class="button" id="begin_upload_button">Upload Song by Link</button>
 
