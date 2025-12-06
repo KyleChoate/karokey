@@ -6,40 +6,45 @@ const videoInput = document.getElementById("video_link_input");
 const videoContainer = document.getElementById("video_container");
 const convertBtn = document.getElementById("convert_song_button");
 
-// Top image display
+// Top image
 const defaultImage = "assets/synthwave.jpg";
 const alternateImage = "assets/lalala.png";
 const imageElement = document.getElementById('topUploadImage');
 
 // Open popup
-openBtn.onclick = () => {
+openBtn.onclick = () => 
+{
   popup.style.display = "flex";
-  videoInput.value = ""; // clear input on open
-  closeBtn.classList.remove("enabled");
-  closeBtn.style.cursor = "not-allowed";
+  // videoInput.value = ""; // clears user input on open
+  if (videoInput.value == "")
+  {
+    closeBtn.style.cursor = "not-allowed";
+    closeBtn.classList.remove("enabled");
+  }
 };
 
 // Close popup and embed video
-closeBtn.onclick = () => {
+closeBtn.onclick = () => 
+{
   if (!closeBtn.classList.contains("enabled")) return;
   popup.style.display = "none";
 
-  // Extract YouTube video ID from input
+  // Extracts YouTube video ID from input
   const link = videoInput.value.trim();
   let videoID = null;
 
   // Check different URL formats
-  if (link.includes("youtube.com/watch?v=")) {
+  if (link.includes("youtube.com/watch?v=")) 
     videoID = link.split("v=")[1].split("&")[0];
-  } else if (link.includes("youtu.be/")) {
+  else if (link.includes("youtu.be/")) 
     videoID = link.split("youtu.be/")[1].split("?")[0];
-  }
 
   // Embed video if valid
-  if (videoID) {
+  if (videoID != null) 
+  {
     videoContainer.innerHTML = `<iframe id="embedded_video" src="https://www.youtube.com/embed/${videoID}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-    if (videoID == "dQw4w9WgXcQ")
+    if (videoID == "dQw4w9WgXcQ") // Easter egg :)
         imageElement.src = alternateImage;
     else
     {
@@ -49,26 +54,29 @@ closeBtn.onclick = () => {
 
     // Show convert song button
     convertBtn.style.display = "block";
-  } else {
-    alert("Invalid YouTube link");
-  }
+  } 
+  else 
+    alert("Invalid YouTube link 😢");
 };
 
 // Enable button when input has text
 videoInput.oninput = () => {
-  if (videoInput.value.trim() !== "") {
+  if (videoInput.value.trim() !== "") 
+  {
     closeBtn.classList.add("enabled");
     closeBtn.style.cursor = "pointer";
-  } else {
+  } 
+  else 
+  {
     closeBtn.classList.remove("enabled");
     closeBtn.style.cursor = "not-allowed";
   }
 };
 
 // Close popup by clicking outside
-window.onclick = (e) => {
-  if (e.target === popup) {
+window.onclick = (e) => 
+{
+  if (e.target === popup) 
     popup.style.display = "none";
-  }
 };
 
